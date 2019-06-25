@@ -167,8 +167,7 @@ exports.associateLeadWithCookie = function (leadId, cookieId, callback) {
           response = response || {};
           response.success = false;
           if (response.body.errors && _.isArray(response.body.errors)) {
-            response.error = response.body.errors.map(function(err){return err.message}).join(',');
-            response.code = response.body.errors.map(function(err){return err.code}).join(',');
+            response.error = response.body.errors.map(function(err){return (err.code + ': ' + err.message)}).join(',');
           } else {
             response.error = error || '';
             response.body = body;
@@ -400,8 +399,7 @@ var authenticate = function (authCallback, options, callback) {
         response = response || {};
         response.success = false;
         if (response.body.errors && _.isArray(response.body.errors)) {
-          response.error = response.body.errors.map(function(err){return err.message}).join(',');
-          response.code = response.body.errors.map(function(err){return err.code}).join(',');
+          response.error = response.body.errors.map(function(err){return (err.code + ': ' + err.message)}).join(',');
         } else {
           response.error = error || '';
           response.body = body;
@@ -444,8 +442,7 @@ var getLeadId = function (email, callback) {
         response = response || {};
         response.success = false;
         if (response.body.errors && _.isArray(response.body.errors)) {
-          response.error = response.body.errors.map(function(err){return err.message}).join(',');
-          response.code = response.body.errors.map(function(err){return err.code}).join(',');
+          response.error = response.body.errors.map(function(err){return (err.code + ': ' + err.message)}).join(',');
         } else {
           response.error = error || '';
           response.body = body;
@@ -482,8 +479,7 @@ var addLeadToList = function (leadId, listId, callback) {
         response = response || {};
         response.success = false;
         if (response.body.errors && _.isArray(response.body.errors)) {
-          response.error = response.body.errors.map(function(err){return err.message}).join(',');
-          response.code = response.body.errors.map(function(err){return err.code}).join(',');
+          response.error = response.body.errors.map(function(err){return (err.code + ': ' + err.message)}).join(',');
         } else {
           response.error = error || '';
           response.body = body;
@@ -520,8 +516,7 @@ var removeLeadFromList = function (leadId, listId, callback) {
         response = response || {};
         response.success = false;
         if (response.body.errors && _.isArray(response.body.errors)) {
-          response.error = response.body.errors.map(function(err){return err.message}).join(',');
-          response.code = response.body.errors.map(function(err){return err.code}).join(',');
+          response.error = response.body.errors.map(function(err){return (err.code + ': ' + err.message)}).join(',');
         } else {
           response.error = error || '';
           response.body = body;
@@ -561,8 +556,7 @@ var addOrUpdateLead = function (options, callback){
         response = response || {};
         response.success = false;
         if (response.body.errors && _.isArray(response.body.errors)) {
-          response.error = response.body.errors.map(function(err){return err.message}).join(',');
-          response.code = response.body.errors.map(function(err){return err.code}).join(',');
+          response.error = response.body.errors.map(function(err){return (err.code + ': ' + err.message)}).join(',');
         } else {
           response.error = error || '';
           response.body = body;
@@ -599,8 +593,7 @@ var removeLead = function (leadId, callback){
         response = response || {};
         response.success = false;
         if (response.body.errors && _.isArray(response.body.errors)) {
-          response.error = response.body.errors.map(function(err){return err.message}).join(',');
-          response.code = response.body.errors.map(function(err){return err.code}).join(',');
+          response.error = response.body.errors.map(function(err){return (err.code + ': ' + err.message)}).join(',');
         } else {
           response.error = error || '';
           response.body = body;
@@ -644,8 +637,7 @@ var requestCampaign = function (campaignId, leadId, tokens, callback){
         response = response || {};
         response.success = false;
         if (response.body.errors && _.isArray(response.body.errors)) {
-          response.error = response.body.errors.map(function(err){return err.message}).join(',');
-          response.code = response.body.errors.map(function(err){return err.code}).join(',');
+          response.error = response.body.errors.map(function(err){return (err.code + ': ' + err.message)}).join(',');
         } else {
           response.error = error || '';
           response.body = body;
