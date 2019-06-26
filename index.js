@@ -166,10 +166,10 @@ exports.associateLeadWithCookie = function (leadId, cookieId, callback) {
         } else {
           response = response || {};
           response.success = false;
-          if (response.body.errors && _.isArray(response.body.errors)) {
+          if (response.body && response.body.errors && _.isArray(response.body.errors)) {
             response.error = response.body.errors.map(function(err){return (err.code + ': ' + err.message)}).join(',');
           } else {
-            response.error = error || '';
+            response.error = error || 'Marketo - Unknown Error';
             response.body = body;
           }
           response.message = 'Marketo Associate Lead API failed.';
@@ -398,10 +398,10 @@ var authenticate = function (authCallback, options, callback) {
       else{
         response = response || {};
         response.success = false;
-        if (response.body.errors && _.isArray(response.body.errors)) {
+        if (response.body && response.body.errors && _.isArray(response.body.errors)) {
           response.error = response.body.errors.map(function(err){return (err.code + ': ' + err.message)}).join(',');
         } else {
-          response.error = error || '';
+          response.error = error || 'Marketo - Unknown Error';
           response.body = body;
         }
         response.message = 'Marketo authentication failed.';
@@ -441,10 +441,10 @@ var getLeadId = function (email, callback) {
       else{
         response = response || {};
         response.success = false;
-        if (response.body.errors && _.isArray(response.body.errors)) {
+        if (response.body && response.body.errors && _.isArray(response.body.errors)) {
           response.error = response.body.errors.map(function(err){return (err.code + ': ' + err.message)}).join(',');
         } else {
-          response.error = error || '';
+          response.error = error || 'Marketo - Unknown Error';
           response.body = body;
         }
         response.message = 'Marketo Get Lead Id by Email API failed.';
@@ -478,10 +478,10 @@ var addLeadToList = function (leadId, listId, callback) {
       else{
         response = response || {};
         response.success = false;
-        if (response.body.errors && _.isArray(response.body.errors)) {
+        if (response.body && response.body.errors && _.isArray(response.body.errors)) {
           response.error = response.body.errors.map(function(err){return (err.code + ': ' + err.message)}).join(',');
         } else {
-          response.error = error || '';
+          response.error = error || 'Marketo - Unknown Error';
           response.body = body;
         }
         response.message = 'Marketo Add Lead to List API failed.';
@@ -515,10 +515,10 @@ var removeLeadFromList = function (leadId, listId, callback) {
       else{
         response = response || {};
         response.success = false;
-        if (response.body.errors && _.isArray(response.body.errors)) {
+        if (response.body && response.body.errors && _.isArray(response.body.errors)) {
           response.error = response.body.errors.map(function(err){return (err.code + ': ' + err.message)}).join(',');
         } else {
-          response.error = error || '';
+          response.error = error || 'Marketo - Unknown Error';
           response.body = body;
         }
         response.message = 'Marketo Remove Lead from List API failed.'
@@ -555,10 +555,10 @@ var addOrUpdateLead = function (options, callback){
       else{
         response = response || {};
         response.success = false;
-        if (response.body.errors && _.isArray(response.body.errors)) {
+        if (response.body && response.body.errors && _.isArray(response.body.errors)) {
           response.error = response.body.errors.map(function(err){return (err.code + ': ' + err.message)}).join(',');
         } else {
-          response.error = error || '';
+          response.error = error || 'Marketo - Unknown Error';
           response.body = body;
         }
         response.message = 'Marketo Add & Edit Lead API failed.';
@@ -592,10 +592,10 @@ var removeLead = function (leadId, callback){
       else{
         response = response || {};
         response.success = false;
-        if (response.body.errors && _.isArray(response.body.errors)) {
+        if (response.body && response.body.errors && _.isArray(response.body.errors)) {
           response.error = response.body.errors.map(function(err){return (err.code + ': ' + err.message)}).join(',');
         } else {
-          response.error = error || '';
+          response.error = error || 'Marketo - Unknown Error';
           response.body = body;
         }
         response.message = 'Marketo Remove Lead API failed.';
@@ -636,10 +636,10 @@ var requestCampaign = function (campaignId, leadId, tokens, callback){
       else{
         response = response || {};
         response.success = false;
-        if (response.body.errors && _.isArray(response.body.errors)) {
+        if (response.body && response.body.errors && _.isArray(response.body.errors)) {
           response.error = response.body.errors.map(function(err){return (err.code + ': ' + err.message)}).join(',');
         } else {
-          response.error = error || '';
+          response.error = error || 'Marketo - Unknown Error';
           response.body = body;
         }
         response.message = 'Marketo Request Campaign API failed.';
