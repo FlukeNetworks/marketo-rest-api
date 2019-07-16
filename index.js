@@ -3,7 +3,11 @@
 */
 'use strict';
 var _ = require('underscore'),
-  request = require('request'),
+  request = require('request').defaults({
+    agentOptions: {
+      secureProtocol: 'TLSv1_2_method'
+    }
+  }),
   clientId,
   clientSecret,
   restEndpoint,
